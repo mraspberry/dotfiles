@@ -1,0 +1,11 @@
+[user]
+	name = Matthew Raspberry
+	email = nixalot@users.noreply.github.com
+[alias]
+	s = status
+	a = add
+	cm = commit
+	amend = commit --amend
+	cb = checkout -b
+[ui]
+	color = true
