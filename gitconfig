@@ -7,5 +7,7 @@
 	cm = commit
 	amend = commit --amend
 	cb = checkout -b
+	b = branch
+	c = checkout
 [ui]
 	color = true
