@@ -1,6 +1,7 @@
 _f_set_aliases() {
     alias c=clear
     alias rld='source ~/.bashrc'
+    alias vi=vim
 }
 
 _f_set_prompt() {

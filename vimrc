@@ -74,6 +74,3 @@ set showmatch
 " == Highlight the 81st character on a line to know when it crosses
 highlight ColorColumn ctermbg=red
 call matchadd('ColorColumn', '\%81v', 100)
-
-" == disable vim remembering the cursor position
-au! redhat BufReadPost
