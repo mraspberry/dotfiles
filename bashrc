@@ -27,12 +27,19 @@ _f_setup_env() {
     export PROMPT_COMMAND=_f_set_prompt
     export HISTTIMEFORMAT="%m/%d/%y %T "
     export PATH=~/node_modules/.bin:~/.local/bin:$HOME/src/flutter/bin:$PATH
+    source ~/.cargo/env
+    umask 022
+}
+
+_f_set_completer() {
+    complete -C "$HOME/.local/bin/aws_completer" aws
 }
 
 case "$-" in
     *i*)
         _f_setup_env
         _f_set_aliases
+        _f_set_completer
         shopt -s cdspell
         shopt -s checkwinsize
         ;;
