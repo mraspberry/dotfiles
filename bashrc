@@ -27,7 +27,9 @@ _f_setup_env() {
     export PROMPT_COMMAND=_f_set_prompt
     export HISTTIMEFORMAT="%m/%d/%y %T "
     export PATH=~/node_modules/.bin:~/.local/bin:$HOME/src/flutter/bin:$PATH
-    source ~/.cargo/env
+    [[ -f ~/.cargo/env ]] && source ~/.cargo/env
+    [[ -f ~/.asdf/asdf.sh ]] && source $HOME/.asdf/asdf.sh
+    [[ -f $HOME/.asdf/completions/asdf.bash ]] && source $HOME/.asdf/completions/asdf.bash
     umask 022
 }
 
@@ -46,3 +48,4 @@ case "$-" in
     *) 
         ;;
 esac
+source "$HOME/.cargo/env"
