@@ -2,6 +2,49 @@
 	name = Matthew Raspberry
 	email = 3092450+mraspberry@users.noreply.github.com
 [alias]
+    # (log) log current HEAD showing graph with branches/tags and short descriptions
+    lg = log --graph --pretty=format:'%Cred%h %C(bold blue)%an%C(bold yellow)%d%Creset %s'
+
+    # (log) log current HEAD showing graph with branches/tags (no descriptions)
+    lgq = log --graph --pretty=format:'%Cred%h%C(bold yellow)%d%Creset'
+
+    # (log all) lg with all refs
+    lga = log --graph --pretty=format:'%Cred%h %C(bold blue)%an%C(bold yellow)%d%Creset %s' --all
+
+    # (log local) lg with local refs
+    lgl = "!git for-each-ref --format='%(refname)' refs/heads/ | xargs git lg"
+    lglb = "!git for-each-ref --format='%(refname)' refs/heads/ | xargs git lg --simplify-by-decoration"
+    lglbq = "!git for-each-ref --format='%(refname)' refs/heads/ | xargs git lgq --simplify-by-decoration"
+
+    # (log brief) lga but only showing interesting refs
+    lgb = log --graph --pretty=format:'%Cred%h %C(bold blue)%an%C(bold yellow)%d%Creset %s' --all --simplify-by-decoration
+
+    # (log brief origin) lgb but only showing interesting refs from origin
+    lgbo = "!git for-each-ref --format='%(refname)' refs/remotes/origin | xargs git lg --simplify-by-decoration"
+
+    # (log files) lg with filenames affected
+    lgf = log --graph --pretty=format:'%Cred%h %C(bold blue)%an%C(bold yellow)%d%Creset %s' --name-status
+
+    # (log dates) lg with full dates of each commit
+    lgd = log --graph --pretty=format:'%Cred%h %Cgreen%ai %C(bold blue)%an%C(bold yellow)%d%Creset %s'
+
+    # (log all dates) lga + lgd
+    lgad = log --graph --pretty=format:'%Cred%h %Cgreen%ai %C(bold blue)%an%C(bold yellow)%d%Creset %s' --all
+
+    # (log narrow) lg with descriptions on new line
+    lgn = log --graph --pretty=format:'%Cred%h %Cgreen%ci %C(bold blue)%an%C(bold yellow)%d%Creset\n- %s'
+
+    # (log short) like lg, but without using --pretty=format
+    lgs = log --oneline --decorate --graph --color
+
+    # (log all no color)
+    lganc = log --color=never --oneline --decorate --graph --all
+    lgbnc = log --color=never --simplify-by-decoration --graph --pretty=format:'%d' --all
+
+    # List all commits that touched a file.
+    # This is extremely non-intuitive, hence an alias
+    # Note: --graph would add extraneous commits
+    touched = log --all --name-status -m --full-history --pretty=format:'%Cred%h %Cgreen%ai %C(bold blue)%an%C(bold yellow)%d%Creset %s'
 	s = status
 	a = add
 	cm = commit
@@ -9,5 +52,6 @@
 	cb = checkout -b
 	b = branch
 	c = checkout
+	bd = branch -d
 [ui]
 	color = true
