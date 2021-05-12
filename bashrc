@@ -20,16 +20,25 @@ _f_set_prompt() {
         local ESTR="${GREEN}${ec}"
     fi
 
-    export PS1="\n${WHITE}[${ESTR}${WHITE}] [${DPURPLE}\u${WHITE}] [${GREEN}\h${WHITE}] [${DPURPLE}\d${WHITE}] [${DPURPLE}\t${WHITE}] [${GREEN}\w${WHITE}]\n${GREEN}$ "
+    local GBRANCH
+    GBRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)
+    if [[ -n "${GBRANCH}" ]]
+    then
+        local GSTR=" ${WHITE}[${RED}${GBRANCH}${WHITE}] "
+    else
+        local GSTR=" "
+    fi
+
+    export PS1="\n${WHITE}[${ESTR}${WHITE}]${GSTR}[${DPURPLE}\u${WHITE}] [${GREEN}\h${WHITE}] [${DPURPLE}\d${WHITE}] [${DPURPLE}\t${WHITE}] [${GREEN}\w${WHITE}]\n${GREEN}$ "
 }
 
 _f_setup_env() {
     export PROMPT_COMMAND=_f_set_prompt
     export HISTTIMEFORMAT="%m/%d/%y %T "
     export PATH=~/node_modules/.bin:~/.local/bin:$HOME/src/flutter/bin:$PATH
-    [[ -f ~/.cargo/env ]] && source ~/.cargo/env
     [[ -f ~/.asdf/asdf.sh ]] && source $HOME/.asdf/asdf.sh
     [[ -f $HOME/.asdf/completions/asdf.bash ]] && source $HOME/.asdf/completions/asdf.bash
+    [[ -d ~/.cargo ]] && source ~/.cargo/env
     umask 022
 }
 
@@ -48,4 +57,3 @@ case "$-" in
     *) 
         ;;
 esac
-source "$HOME/.cargo/env"
