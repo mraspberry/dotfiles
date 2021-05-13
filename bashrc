@@ -2,6 +2,8 @@ _f_set_aliases() {
     alias c=clear
     alias rld='source ~/.bashrc'
     alias vi=vim
+    alias pipenv='python3 -mpipenv'
+    alias pip='python3 -mpip'
 }
 
 _f_set_prompt() {
