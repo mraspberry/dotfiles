@@ -24,12 +24,19 @@ _f_set_prompt() {
     GBRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || true)
     if [[ -n "${GBRANCH}" ]]
     then
-        local GSTR=" ${WHITE}[${RED}${GBRANCH}${WHITE}] "
+        local GSTR=" ${WHITE}[${RED}git: ${GBRANCH}${WHITE}] "
     else
         local GSTR=" "
     fi
 
-    export PS1="\n${WHITE}[${ESTR}${WHITE}]${GSTR}[${DPURPLE}\u${WHITE}] [${GREEN}\h${WHITE}] [${DPURPLE}\d${WHITE}] [${DPURPLE}\t${WHITE}] [${GREEN}\w${WHITE}]\n${GREEN}$ "
+    local VENV_STR
+    if [[ -n "${VIRTUAL_ENV}" ]]
+    then
+        local VENV="${WHITE}[${RED}venv:$(basename $(dirname $VIRTUAL_ENV))${WHITE}] "
+    else
+        local VENV=""
+    fi
+    export PS1="\n${WHITE}[${ESTR}${WHITE}]${GSTR}${VENV}[${DPURPLE}\u${WHITE}] [${GREEN}\h${WHITE}] [${DPURPLE}\d${WHITE}] [${DPURPLE}\t${WHITE}] [${GREEN}\w${WHITE}]\n${GREEN}$ "
 }
 
 _f_setup_env() {
