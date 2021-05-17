@@ -50,6 +50,8 @@ _f_setup_env() {
     [[ -f ~/.asdf/asdf.sh ]] && source $HOME/.asdf/asdf.sh
     [[ -f $HOME/.asdf/completions/asdf.bash ]] && source $HOME/.asdf/completions/asdf.bash
     [[ -d ~/.cargo ]] && source ~/.cargo/env
+    [[ -d /opt/homebrew ]] && export PATH=$PATH:/opt/homebrew/bin
+    [[ -d /usr/local/bin ]] && export PATH=$PATH:/usr/local/bin
     umask 022
 }
 
