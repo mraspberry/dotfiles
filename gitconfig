@@ -53,7 +53,10 @@
 	b = branch
 	c = checkout
 	bd = branch -d
+	unstage = reset HEAD
 [ui]
 	color = true
 [init]
 	defaultBranch = master
+[pull]
+	rebase = true

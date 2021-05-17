@@ -4,6 +4,8 @@ _f_set_aliases() {
     alias vi=vim
     alias pipenv='python3 -mpipenv'
     alias pip='python3 -mpip'
+    alias cdg="cd $(git rev-parse --show-toplevel 2>/dev/null)"
+    alias super-linter="docker run -e RUN_LOCAL=true -v $(git rev-parse --show-toplevel):/tmp/lint github/super-linter"
 }
 
 _f_set_prompt() {
