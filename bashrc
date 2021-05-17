@@ -5,7 +5,6 @@ _f_set_aliases() {
     alias pipenv='python3 -mpipenv'
     alias pip='python3 -mpip'
     alias cdg="cd $(git rev-parse --show-toplevel 2>/dev/null)"
-    alias super-linter="docker run -e RUN_LOCAL=true -v $(git rev-parse --show-toplevel):/tmp/lint github/super-linter"
 }
 
 _f_set_prompt() {
@@ -59,11 +58,19 @@ _f_set_completer() {
     complete -C "$HOME/.local/bin/aws_completer" aws
 }
 
+_f_define_functions() {
+    function super-linter() {
+        docker run -e RUN_LOCAL=true -v $(git rev-parse --show-toplevel):/tmp/lint github/super-linter
+    }
+}
+
+
 case "$-" in
     *i*)
         _f_setup_env
         _f_set_aliases
         _f_set_completer
+        _f_define_functions
         shopt -s cdspell
         shopt -s checkwinsize
         ;;
