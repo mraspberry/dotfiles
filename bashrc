@@ -5,6 +5,7 @@ _f_set_aliases() {
     alias pipenv='python3 -mpipenv'
     alias pip='python3 -mpip'
     alias cdg="cd $(git rev-parse --show-toplevel 2>/dev/null)"
+    alias va='source .venv/bin/activate'
 }
 
 _f_set_prompt() {
@@ -52,6 +53,7 @@ _f_setup_env() {
     [[ -d /opt/homebrew ]] && export PATH=$PATH:/opt/homebrew/bin
     [[ -d /usr/local/bin ]] && export PATH=$PATH:/usr/local/bin
     umask 022
+    [[ -f ~/.additional_envs ]] && source ~/.additional_envs
 }
 
 _f_set_completer() {
