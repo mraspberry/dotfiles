@@ -4,7 +4,6 @@ _f_set_aliases() {
     alias vi=vim
     alias pipenv='python3 -mpipenv'
     alias pip='python3 -mpip'
-    alias cdg="cd $(git rev-parse --show-toplevel 2>/dev/null)"
     alias va='source .venv/bin/activate'
 }
 
@@ -63,6 +62,9 @@ _f_set_completer() {
 _f_define_functions() {
     function super-linter() {
         docker run -e RUN_LOCAL=true -v $(git rev-parse --show-toplevel):/tmp/lint github/super-linter
+    }
+    function cdg() {
+        cd $(git rev-parse --show-toplevel 2>/dev/null)
     }
 }
 
