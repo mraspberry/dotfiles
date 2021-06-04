@@ -61,6 +61,7 @@ _f_set_completer() {
 
 _f_define_functions() {
     function super-linter() {
+        docker image ls | grep -q super-linter || docker pull github/super-linter:latest
         docker run -e RUN_LOCAL=true -v $(git rev-parse --show-toplevel):/tmp/lint github/super-linter
     }
     function cdg() {
