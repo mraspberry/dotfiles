@@ -60,3 +60,5 @@
 	defaultBranch = main
 [pull]
 	rebase = true
+[push]
+	followTags = true
