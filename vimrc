@@ -1,6 +1,9 @@
 " == automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
+" Fix slow syntax highlighting
+set re=0
+
 " == remap semi-colon to colon and vice-versa
 " nnoremap ; :
 " nnoremap : ;
