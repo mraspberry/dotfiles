@@ -53,6 +53,10 @@ _f_setup_env() {
     [[ -d /usr/local/bin ]] && export PATH=$PATH:/usr/local/bin
     umask 022
     [[ -f ~/.additional_envs ]] && source ~/.additional_envs
+    if [[ "$(uname)" == "Darwin" ]]
+    then
+        export BASH_SILENCE_DEPRECATION_WARNING=1
+    fi
 }
 
 _f_set_completer() {
