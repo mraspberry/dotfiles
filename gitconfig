@@ -54,6 +54,7 @@
 	c = checkout
 	bd = branch -d
 	unstage = reset HEAD
+	prune = pull --prune
 [ui]
 	color = true
 [init]
