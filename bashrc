@@ -84,5 +84,6 @@ case "$-" in
         shopt -s checkwinsize
         ;;
     *) 
+        _f_setup_env
         ;;
 esac
