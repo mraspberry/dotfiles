@@ -13,4 +13,5 @@ WORKDIR /code
 COPY . /code
 RUN chown -R mlr:mlr /code
 USER mlr
-RUN /code/test.sh
+#RUN /code/test.sh
+CMD ["/code/test.sh"]
