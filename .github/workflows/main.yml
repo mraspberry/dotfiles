@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  build:
+  build-and-test:
 
     runs-on: ubuntu-latest
     name: Test install
@@ -18,5 +18,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run test suite
+        env:
+          INSTALL_DIR: /tmp/testing
         uses: ./ # Uses an action in the root directory
         id: test-sh
