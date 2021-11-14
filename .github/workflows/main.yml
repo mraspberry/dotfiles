@@ -19,6 +19,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Run test suite
         env:
-          INSTALL_DIR: /tmp/testing
+          INSTALL_DIR: /code/testing
         uses: ./ # Uses an action in the root directory
         id: test-sh
