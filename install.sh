@@ -26,7 +26,7 @@ case $(uname) in
 esac
 
 git clone https://github.com/asdf-vm/asdf.git ${INSTALL_DIR}/.asdf --branch v0.8.1
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rustup-init
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 chmod +x rustup-init && ./rustup-init -y
 
 git clone https://github.com/preservim/nerdtree.git ${INSTALL_DIR}/.vim/pack/vendor/start/nerdtree
