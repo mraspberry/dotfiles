@@ -5,6 +5,11 @@ _f_set_aliases() {
     alias pipenv='python3 -mpipenv'
     alias pip='python3 -mpip'
     alias va='source .venv/bin/activate'
+
+    if [[ "$(uname)" == "Darwin" ]]
+    then
+        alias ctags='/usr/local/bin/ctags'
+    fi
 }
 
 _f_set_prompt() {
