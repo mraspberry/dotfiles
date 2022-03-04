@@ -50,7 +50,8 @@ _f_set_prompt() {
 _f_setup_env() {
     export PROMPT_COMMAND=_f_set_prompt
     export HISTTIMEFORMAT="%m/%d/%y %T "
-    export PATH=~/.asdf/installs/nodejs/lts/.npm/bin:~/.local/bin:$HOME/src/flutter/bin:$PATH
+    export PATH=~/.asdf/installs/nodejs/lts/.npm/bin:~/.local/bin:$HOME/src/flutter/bin:~/.pulumi/bin:$PATH
+
     [[ -f ~/.asdf/asdf.sh ]] && source $HOME/.asdf/asdf.sh
     [[ -f $HOME/.asdf/completions/asdf.bash ]] && source $HOME/.asdf/completions/asdf.bash
     [[ -d ~/.cargo ]] && source ~/.cargo/env
