@@ -77,6 +77,12 @@ _f_define_functions() {
     function cdg() {
         cd $(git rev-parse --show-toplevel 2>/dev/null)
     }
+    function dockerpurge() {
+        docker container prune -f || return
+        docker image ls -q | xargs docker rmi -f
+        docker builder prune -af
+        docker system prune -f
+    }
 }
 
 

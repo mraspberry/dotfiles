@@ -3,7 +3,8 @@
 set -o errexit
 set -o pipefail
 
-for fn in $(ls | grep -v README | grep -v LICENSE | grep -v "$(basename $0)")
+FILES=("bashrc" "vimrc" "gitconfig" "tmux.conf")
+for fn in ${FILES[@]}
 do
     ln -sfv $PWD/${fn} ~/.${fn}
 done
