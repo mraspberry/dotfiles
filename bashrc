@@ -47,7 +47,7 @@ _f_set_prompt() {
     export PS1="\n${WHITE}[${ESTR}${WHITE}]${GSTR}${VENV}[${DPURPLE}\u${WHITE}] [${GREEN}\h${WHITE}] [${DPURPLE}\d${WHITE}] [${DPURPLE}\t${WHITE}] [${GREEN}\w${WHITE}]\n${GREEN}$ "
 }
 
-_f_setup_env() {
+_f_set_env() {
     export PROMPT_COMMAND=_f_set_prompt
     export HISTTIMEFORMAT="%m/%d/%y %T "
     export PATH=~/.asdf/installs/nodejs/lts/.npm/bin:~/.local/bin:$HOME/src/flutter/bin:~/.pulumi/bin:$PATH
@@ -88,7 +88,8 @@ _f_define_functions() {
 
 case "$-" in
     *i*)
-        _f_setup_env
+        export CDPATH=".:~/projects:~"
+        _f_set_env
         _f_set_aliases
         _f_set_completer
         _f_define_functions
@@ -96,6 +97,6 @@ case "$-" in
         shopt -s checkwinsize
         ;;
     *) 
-        _f_setup_env
+        _f_set_env
         ;;
 esac
