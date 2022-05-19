@@ -76,17 +76,3 @@ set showmatch
 
 " == Highlight the 81st character on a line to know when it crosses
 highlight ColorColumn ctermbg=red
-
-" == disable arrow keys for navigation
-nnoremap <Left> :echo "Use HJKL!"<CR>
-vnoremap <Left> :echo "Use HJKL!"<CR>
-inoremap <Left> :echo "Use HJKL!"<CR>
-nnoremap <Right> :echo "Use HJKL!"<CR>
-vnoremap <Right> :echo "Use HJKL!"<CR>
-inoremap <Right> :echo "Use HJKL!"<CR>
-nnoremap <Up> :echo "Use HJKL!"<CR>
-vnoremap <Up> :echo "Use HJKL!"<CR>
-inoremap <Up> :echo "Use HJKL!"<CR>
-nnoremap <Down> :echo "Use HJKL!"<CR>
-vnoremap <Down> :echo "Use HJKL!"<CR>
-inoremap <Down> :echo "Use HJKL!"<CR>
