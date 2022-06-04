@@ -63,6 +63,8 @@ _f_set_env() {
     then
         export BASH_SILENCE_DEPRECATION_WARNING=1
     fi
+    export PULUMI_CONFIG_PASSPHRASE=
+    export PULUMI_PREFER_YARN=yes
 }
 
 _f_set_completer() {
