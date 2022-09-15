@@ -95,6 +95,7 @@ case "$-" in
         _f_set_aliases
         _f_set_completer
         _f_define_functions
+        ulimit -n 8192
         shopt -s cdspell
         shopt -s checkwinsize
         ;;
