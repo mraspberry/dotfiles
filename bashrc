@@ -64,7 +64,7 @@ _f_set_env() {
         export BASH_SILENCE_DEPRECATION_WARNING=1
     fi
     export PULUMI_CONFIG_PASSPHRASE=
-    export PULUMI_PREFER_YARN=yes
+    export PULUMI_PREFER_YARN=true
 }
 
 _f_set_completer() {
@@ -80,7 +80,7 @@ _f_define_functions() {
         cd $(git rev-parse --show-toplevel 2>/dev/null)
     }
     function dockerpurge() {
-        docker container prune -f || return
+        docker container prune -f
         docker image ls -q | xargs docker rmi -f
         docker builder prune -af
         docker system prune -f
