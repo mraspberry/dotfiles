@@ -3,7 +3,7 @@
 set -o errexit
 set -o pipefail
 
-FILES=("bashrc" "vimrc" "gitconfig" "tmux.conf")
+FILES=("bashrc" "vimrc" "gitconfig" "tmux.conf" "alacritty.yml")
 for fn in ${FILES[@]}
 do
     ln -sfv $PWD/${fn} ~/.${fn}
