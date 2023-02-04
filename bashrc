@@ -5,6 +5,7 @@ _f_set_aliases() {
     alias pipenv='python3 -mpipenv'
     alias pip='python3 -mpip'
     alias va='source .venv/bin/activate'
+    alias assume="source /usr/local/bin/assume"
 
     if [[ "$(uname)" == "Darwin" ]]
     then
