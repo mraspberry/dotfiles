@@ -69,7 +69,7 @@ _f_set_env() {
 }
 
 _f_set_completer() {
-    complete -C "$HOME/.local/bin/aws_completer" aws
+    complete -C "$(which aws_completer)" aws
 }
 
 _f_define_functions() {
