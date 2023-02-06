@@ -104,3 +104,7 @@ case "$-" in
         _f_set_env
         ;;
 esac
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/matt.raspberry/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
