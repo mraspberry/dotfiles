@@ -67,6 +67,8 @@ _f_set_env() {
     export PULUMI_CONFIG_PASSPHRASE=
     export PULUMI_PREFER_YARN=true
     export AWS_DEFAULT_REGION=us-east-1
+    # for granted
+    export FORCE_NO_ALIAS=true
 }
 
 _f_set_completer() {
