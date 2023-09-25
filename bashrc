@@ -1,11 +1,13 @@
 _f_set_aliases() {
+    local ASSUME
+    ASSUME=$(which assume)
     alias c=clear
     alias rld='source ~/.bashrc'
     alias vi=vim
     alias pipenv='python3 -mpipenv'
     alias pip='python3 -mpip'
     alias va='source .venv/bin/activate'
-    alias assume="source /usr/local/bin/assume"
+    alias assume="source ${ASSUME}"
 
     if [[ "$(uname)" == "Darwin" ]]
     then
@@ -107,3 +109,4 @@ case "$-" in
         _f_set_env
         ;;
 esac
+. "$HOME/.cargo/env"
