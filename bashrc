@@ -109,4 +109,3 @@ case "$-" in
         _f_set_env
         ;;
 esac
-. "$HOME/.cargo/env"
