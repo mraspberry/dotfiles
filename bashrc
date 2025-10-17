@@ -66,7 +66,7 @@ _f_set_env() {
     then
         export BASH_SILENCE_DEPRECATION_WARNING=1
     fi
-    export PULUMI_CONFIG_PASSPHRASE=
+    export PULUMI_CONFIG_PASSPHRASE_FILE=~/.pulumi-pass
     export PULUMI_PREFER_YARN=true
     export AWS_DEFAULT_REGION=us-east-1
     # for granted
